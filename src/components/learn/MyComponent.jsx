@@ -11,6 +11,7 @@ const MyComponent = () => {
     // const hoidanit = null
     // Đối với trường hợp kiểu dữ liệu là boolean , undefined , null thì việc dùng biến số sẽ vô nghĩa
     const hoidanit = [1, 2, 3]
+    // Đối với trường hợp kiểu dữ liệu là array và obj thì phải ép về string vì JSX chỉ đọc đc string và number
     return (
         <>
             <div>fullname</div>
