@@ -6,6 +6,7 @@ const TodoNew = (props) => {
     const [inputValue, setInputValue] = useState("Eric")
     const handleClick = () => {
         addNewTodo(inputValue);
+        setInputValue("");
 
     }
     const handleOnchange = (name) => {
@@ -18,6 +19,7 @@ const TodoNew = (props) => {
                 type="text"
                 placeholder="Nhập từ khóa"
                 onChange={(event) => { handleOnchange(event.target.value) }}
+                value={inputValue}
             />
             <button onClick={handleClick}>Add</button>
             <div>My text input is : {inputValue}</div>
