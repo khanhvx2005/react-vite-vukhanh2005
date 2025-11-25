@@ -1,11 +1,16 @@
+import { useState } from "react";
+
 const TodoNew = (props) => {
+    // const inputValue = "eric";
     const { addNewTodo } = props;
-    addNewTodo();
+    // addNewTodo();
+    const [inputValue, setInputValue] = useState("Eric")
     const handleClick = () => {
-        console.log("---->>> handleClick")
+        console.log("---->>> handleClick", inputValue)
     }
     const handleOnchange = (name) => {
-        console.log("---->", name);
+        // console.log("---->", name);
+        setInputValue(name) // Mỗi 1 lần thay đổi giá trị ô input thì sẽ cập nhập lại giá trị inputValue
     }
     return (
         <div className="todo-new">
@@ -15,6 +20,7 @@ const TodoNew = (props) => {
                 onChange={(event) => { handleOnchange(event.target.value) }}
             />
             <button onClick={handleClick}>Add</button>
+            <div>My text input is : {inputValue}</div>
         </div>
     )
 }
