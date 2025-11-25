@@ -3,10 +3,10 @@ import { useState } from "react";
 const TodoNew = (props) => {
     // const inputValue = "eric";
     const { addNewTodo } = props;
-    // addNewTodo();
     const [inputValue, setInputValue] = useState("Eric")
     const handleClick = () => {
-        console.log("---->>> handleClick", inputValue)
+        addNewTodo(inputValue);
+
     }
     const handleOnchange = (name) => {
         // console.log("---->", name);

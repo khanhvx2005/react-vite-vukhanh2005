@@ -4,6 +4,7 @@ import TodoNew from "./components/todo/TodoNew"
 import logoReact from "./assets/react.svg"
 import { useState } from "react"
 const App = () => {
+  // Khởi tạo 1 biến và React quản lý biến đấy , khác với biến khai báo thông thường là nó có hàm để cập nhập giá trị biến
   const [todoList, setTodoList] = useState([
     { id: 1, name: "Learn React" },
     { id: 2, name: "Watching Youtobe" }
@@ -14,8 +15,16 @@ const App = () => {
     address: "haiduong",
     country: "hanoi"
   }
-  const addNewTodo = () => {
-    alert("call me")
+  const addNewTodo = (name) => {
+
+    const newTodoList = {
+      id: randomIntFromInterval(1, 100000),
+      name: name
+    }
+    setTodoList([...todoList, newTodoList])
+  }
+  function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   return (
