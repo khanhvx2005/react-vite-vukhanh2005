@@ -8,22 +8,24 @@ import {
 } from "react-router";
 import "./styles/gloabal.css"
 import LoginPage from './pages/login.jsx';
-import ProductPage from './pages/product.jsx';
+import BookPage from './pages/books.jsx';
 import UserPage from './pages/user.jsx';
 import RegisterPage from './pages/register.jsx';
 import TodoApp from './components/todo/TodoApp.jsx';
+import ErrorPage from './pages/error.jsx';
 let router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
         element: <TodoApp />
       },
       {
-        path: "/products",
-        element: <ProductPage />
+        path: "/books",
+        element: <BookPage />
       },
       {
         path: "/users",
