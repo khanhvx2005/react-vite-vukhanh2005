@@ -14,24 +14,28 @@ import RegisterPage from './pages/register.jsx';
 let router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <App />,
+    children: [
+      {
+        path: "/products",
+        element: <ProductPage />
+      },
+      {
+        path: "/users",
+        element: <UserPage />
+      }
+
+    ]
   },
   {
     path: "/login",
     element: <LoginPage />
   },
   {
-    path: "/users",
-    element: <UserPage />
-  },
-  {
-    path: "/products",
-    element: <ProductPage />
-  },
-  {
     path: "/register",
     element: <RegisterPage />
-  },
+  }
+
 ]);
 
 createRoot(document.getElementById('root')).render(
