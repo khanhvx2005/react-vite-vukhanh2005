@@ -3,6 +3,8 @@ import TodoData from "./components/todo/TodoData"
 import TodoNew from "./components/todo/TodoNew"
 import logoReact from "./assets/react.svg"
 import { useState } from "react"
+import Header from "./components/layout/header"
+import Footer from "./components/layout/footer"
 const App = () => {
   // Khởi tạo 1 biến và React quản lý biến đấy , khác với biến khai báo thông thường là nó có hàm để cập nhập giá trị biến
   const [todoList, setTodoList] = useState([])
@@ -20,22 +22,27 @@ const App = () => {
   }
 
   return (
-    <div className="todo-container">
-      <div className="todo-title">Todo List</div>
-      <TodoNew addNewTodo={addNewTodo} />
-      {todoList.length > 0 ?
-        <TodoData
+    <>
+      <Header />
+      <div className="todo-container">
+        <div className="todo-title">Todo List</div>
+        <TodoNew addNewTodo={addNewTodo} />
+        {todoList.length > 0 ?
+          <TodoData
 
-          todoList={todoList}
-        />
-        :
-        <div className="todo-image">
-          <img src={logoReact} alt="" className="logo" />
-        </div>
+            todoList={todoList}
+          />
+          :
+          <div className="todo-image">
+            <img src={logoReact} alt="" className="logo" />
+          </div>
 
-      }
+        }
 
-    </div>
+      </div>
+      <Footer />
+    </>
+
   )
 }
 

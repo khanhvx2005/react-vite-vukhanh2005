@@ -6,6 +6,11 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router";
+import "./styles/gloabal.css"
+import LoginPage from './pages/login.jsx';
+import ProductPage from './pages/product.jsx';
+import UserPage from './pages/user.jsx';
+import RegisterPage from './pages/register.jsx';
 let router = createBrowserRouter([
   {
     path: "/",
@@ -13,19 +18,19 @@ let router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <div>login page</div>
+    element: <LoginPage />
   },
   {
     path: "/users",
-    element: <div>users page</div>
+    element: <UserPage />
   },
   {
     path: "/products",
-    element: <div>products page</div>
+    element: <ProductPage />
   },
   {
     path: "/register",
-    element: <div>register page</div>
+    element: <RegisterPage />
   },
 ]);
 
